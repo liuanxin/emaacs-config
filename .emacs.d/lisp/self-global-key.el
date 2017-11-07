@@ -1,5 +1,6 @@
 
 (global-set-key (kbd "C-x a") 'mark-whole-buffer)    ;; 全选 的默认键是 C-x h, 添加 C-x a 一种按键方式
+(global-set-key (kbd "<C-f6>") 'mark-whole-buffer)   ;; 全选 的默认键是 C-x h, 添加 f6 一种按键方式
 
 (global-set-key (kbd "C-M-1") 'delete-other-windows) ;; 设置 C-A-1 跟 C-x 1 一样, 删除其他的 window
 (global-set-key (kbd "C-M-2") 'split-window-below)   ;; 设置 C-A-2 跟 C-x 2 一样, 纵向切割
