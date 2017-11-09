@@ -34,15 +34,15 @@
 ;; ctrl-alt-\ 格式化代码
 (dolist (command '(yank yank-pop))
   (eval `(defadvice, command
-		   (after indent-region activate)
-		   (and (not current-prefix-arg)
-				(member major-mode
-						'(emacs-lisp-mode lisp-mode clojure-mode scheme-mode
-										  haskell-mode ruby-mode rspec-mode
-										  python-mode c-mode c++-mode java-mode
-										  objc-mode	latex-mode js-mode plain-tex-mode))
-				(let ((mark-even-if-inactive transient-mark-mode))
-				  (indent-region (region-beginning) (region-end) nil))))))
+           (after indent-region activate)
+           (and (not current-prefix-arg)
+                (member major-mode
+                        '(emacs-lisp-mode lisp-mode clojure-mode scheme-mode
+                                          haskell-mode ruby-mode rspec-mode
+                                          python-mode c-mode c++-mode java-mode
+                                          objc-mode    latex-mode js-mode plain-tex-mode))
+                (let ((mark-even-if-inactive transient-mark-mode))
+                  (indent-region (region-beginning) (region-end) nil))))))
 ;; 格式化选中的 json, 其语法非常严格: 必须是双引号, 不能有注释
 (global-set-key (kbd "C-c C-f") 'json-reformat-region)
 
@@ -53,8 +53,8 @@
 
 (defun shift-region(numcols)
   (if (< (point)(mark))
-	  (if (not(bolp))
-		  (progn (beginning-of-line)(exchange-point-and-mark) (end-of-line)))
+      (if (not(bolp))
+          (progn (beginning-of-line)(exchange-point-and-mark) (end-of-line)))
     (progn (end-of-line)(exchange-point-and-mark)(beginning-of-line)))
   (setq region-start (region-beginning))
   (setq region-finish (region-end))
@@ -66,7 +66,7 @@
 (defun my-indent (tab)
   (interactive)
   (if mark-active (indent-block tab)
-	(if (looking-at "\\>") (hippie-expand nil) (insert tab))))
+    (if (looking-at "\\>") (hippie-expand nil) (insert tab))))
 
 (defun my-unindent(tab-width)
   (interactive)
@@ -76,7 +76,7 @@
         (if (looking-back "^[ \t]*")
             (progn
               (let ((a (length(buffer-substring-no-properties (point-at-bol) (point)))))
-				(progn
+                (progn
                   (if (> a tab-width)
                       (delete-backward-char tab-width)
                     (backward-delete-char a)))))
@@ -91,11 +91,11 @@
 (defun my-unindent-four() (interactive) (my-unindent 4))
 
 (add-hook 'find-file-hooks
-		  (function
-		   (lambda()
-			 (unless (eq major-mode 'org-mode)
-			   ;; 不在 org mode 下时, S-tab 缩进四个空格
-			   (local-set-key (kbd "<backtab>") 'my-unindent-four)))))
+          (function
+           (lambda()
+             (unless (eq major-mode 'org-mode)
+               ;; 不在 org mode 下时, S-tab 缩进四个空格
+               (local-set-key (kbd "<backtab>") 'my-unindent-four)))))
 
 ;; m-i 写两个空格
 (global-set-key (kbd "M-i") 'my-indent-two)
@@ -116,8 +116,8 @@
 ;; C-k 调用的方法
 (defadvice kill-line (before check-position activate)
   (if (member major-mode
-			  '(emacs-lisp-mode lisp-mode scheme-mode
-								ruby-mode python-mode java-mode
+              '(emacs-lisp-mode lisp-mode scheme-mode
+                                ruby-mode python-mode java-mode
                                 c-mode c++-mode objc-mode js-mode
                                 latex-mode plain-tex-mode))
       (if (and (eolp) (not (bolp)))
