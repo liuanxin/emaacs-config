@@ -73,15 +73,15 @@
 ;; 当 M-x org-publish-project 之后显示 Skipping unmodified file, 使用 C-u M-x org-publish
 
 (setq org-publish-project-alist
-	  (list
-	   '("local"
-		 :base-directory "~/org/"
-		 :publishing-directory "~/org/"
+      (list
+       '("local"
+         :base-directory "~/org/"
+         :publishing-directory "~/org/"
          :publishing-function org-twbs-publish-to-html)
 
-	   '("remote"
-	     :base-extension "org"
-		 :base-directory "~/org/"
-		 :publishing-directory "/ssh:user@ip:~/interface/"
+       '("remote"
+         :base-extension "org"
+         :base-directory "~/org/"
+         :publishing-directory "/ssh:user@ip:~/interface/"
          :publishing-function org-twbs-publish-to-html)
 ))
