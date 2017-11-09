@@ -1,0 +1,8 @@
+
+*** emacs config
+
+#+BEGIN_EXAMPLE
+basic
+org-mode
+global-key
+#+END_EXAMPLE
