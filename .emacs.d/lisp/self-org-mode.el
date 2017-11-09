@@ -82,6 +82,6 @@
 	   '("remote"
 	     :base-extension "org"
 		 :base-directory "~/org/"
-		 :publishing-directory "/ssh:admin@192.168.10.224:~/interface/"
+		 :publishing-directory "/ssh:user@ip:~/interface/"
          :publishing-function org-twbs-publish-to-html)
 ))
