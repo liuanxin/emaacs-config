@@ -1,8 +1,11 @@
 
 *** emacs config
 
-#+BEGIN_EXAMPLE
-basic
-org-mode
-global-key
-#+END_EXAMPLE
+custom-file
+1. basic
+1. org-mode
+1. global-key
+
+plugin
+: neotree   ox-twbs   markdown-mode   pinyin-search   youdao-dictionary
+: edit-server   inf-ruby   ruby-mode   ruby-tools   django-mode
