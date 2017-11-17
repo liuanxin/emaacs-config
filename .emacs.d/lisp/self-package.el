@@ -1,7 +1,8 @@
 
 ;; (require 'package)
 (setq package-archives
-      '(("gnu" . "http://elpa.gnu.org/packages/")         ;; 官方源
+      '(
+        ("gnu" . "http://elpa.gnu.org/packages/")         ;; 官方源
         ("popkit" . "http://elpa.popkit.org/packages/")   ;; 网友做的国内源
       )
 )
