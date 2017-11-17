@@ -5,7 +5,7 @@
 (unless (server-running-p) (server-start))
 
 ;; (add-to-list 'load-path "~/.emacs.d/lisp")
-(load-file "~/.emacs.d/lisp/self-package-session.el")
+(load-file "~/.emacs.d/lisp/self-package.el")
 (load-file "~/.emacs.d/lisp/self-basic.el")
 (load-file "~/.emacs.d/lisp/self-org-mode.el")
 (load-file "~/.emacs.d/lisp/self-global-key.el")
