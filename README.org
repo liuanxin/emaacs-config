@@ -7,5 +7,5 @@ custom-file
 1. global-key
 
 plugin
-: neotree   ox-twbs   chinese-fonts-setup   pinyin-search   markdown-mode   <youdao-dictionary>
-: <edit-server   inf-ruby   ruby-mode   ruby-tools   django-mode>
+: session   <desktop+>   neotree   ox-twbs   chinese-fonts-setup   pinyin-search   markdown-mode
+: <youdao-dictionary   edit-server   inf-ruby   ruby-mode   ruby-tools   django-mode>
