@@ -13,6 +13,37 @@
 
 ;; C-M-f 或 C-M-b 来跳转匹配的括号
 
+;; 用 C-< 打记号, 在其他地方 C-, 跳回来. 与 bookmark 或 寄存器相对快很多, 同 vi 的 ma mb 'a 'b 操作(其有 26 个 mark)
+(global-set-key [(control ?\<)] 'ska-point-to-register)
+(global-set-key [(control ?\,)] 'ska-jump-to-register)
+(defun ska-point-to-register()
+  "Store cursorposition _fast_ in a register.
+Use ska-jump-to-register to jump back to the stored
+position."
+  (interactive)
+  (setq zmacs-region-stays t)
+  (point-to-register 8))
+(defun ska-jump-to-register()
+  "Switches between current cursorposition and position
+that was stored with ska-point-to-register."
+  (interactive)
+  (setq zmacs-region-stays t)
+  (let ((tmp (point-marker)))
+    (jump-to-register 8)
+    (set-register 8 tmp)))
+
+;; vi 的 f 命令替代. C-c a x(x 是任意字符), 继续按 x 到下一下 x 处
+(defun wy-go-to-char (n char)
+  "Move forward to Nth occurence of CHAR.
+Typing `wy-go-to-char-key' again will move forwad to the next Nth
+occurence of CHAR."
+  (interactive "p\ncGo to char: ")
+  (search-forward (string char) nil nil n)
+  (while (char-equal (read-char) char)
+    (search-forward (string char) nil nil n))
+  (setq unread-command-events (list last-input-event)))
+(define-key global-map (kbd "C-c a") 'wy-go-to-char)
+
 ;; F5, C-c C-g 跳到指定行
 (global-set-key (kbd "<f5>") 'goto-line)
 (global-set-key (kbd "C-c C-g") 'goto-line)
