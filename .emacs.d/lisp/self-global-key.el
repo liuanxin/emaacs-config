@@ -1,5 +1,8 @@
 
 ;; Ctrl + \ 拼符模式, 可以用拼音输入中文!
+
+;; (global-set-key (kbd "C-x C-b") 'ibuffer)         ;; 替换默认的 buffer
+
 (global-set-key (kbd "C-x a") 'mark-whole-buffer)    ;; 全选 的默认键是 C-x h, 添加 C-x a 一种按键方式
 (global-set-key (kbd "<C-f6>") 'mark-whole-buffer)   ;; 全选 的默认键是 C-x h, 添加 f6 一种按键方式
 
