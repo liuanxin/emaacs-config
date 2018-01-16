@@ -9,3 +9,5 @@ custom-file
 plugin
 : session   <desktop+>   neotree   ox-twbs   chinese-fonts-setup   pinyin-search   markdown-mode
 : <youdao-dictionary   edit-server   inf-ruby   ruby-mode   ruby-tools   django-mode>
+
+neotree 与自带的 speedbar 功能很类似
