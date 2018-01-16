@@ -7,7 +7,10 @@ custom-file
 1. global-key
 
 plugin
-: session   <desktop+>   neotree   ox-twbs   chinese-fonts-setup   pinyin-search   markdown-mode
+: session   <desktop+>   color theme    neotree   ox-twbs   chinese-fonts-setup   pinyin-search   markdown-mode
 : <youdao-dictionary   edit-server   inf-ruby   ruby-mode   ruby-tools   django-mode>
 
 neotree 与自带的 speedbar 功能很类似
+安装 color-theme 后使用 M-x color-theme-select 查看配色方案窗口, l 改变当前 frame 的配色, i 改变所有 frame 的配色
+如果想选定一个配色方案后就一直用它, 而避免每次都加载大量用不着的 lisp 代码, 按 p 就可以把当前配色方案的 lisp 打印出来, 然后把它加到 .emacs 文件.
+这样比使用 (require 'color-theme) 更快
