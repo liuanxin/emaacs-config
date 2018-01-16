@@ -11,6 +11,8 @@
 (global-set-key (kbd "C-M-3") 'split-window-right)   ;; 设置 C-A-3 跟 C-x 3 一样, 横向切割
 (global-set-key (kbd "C-M-4") 'delete-window)        ;; 设置 C-A-4 跟 C-x 0 一样, 删除当前窗口
 
+;; C-M-f 或 C-M-b 来跳转匹配的括号
+
 ;; F5, C-c C-g 跳到指定行
 (global-set-key (kbd "<f5>") 'goto-line)
 (global-set-key (kbd "C-c C-g") 'goto-line)
