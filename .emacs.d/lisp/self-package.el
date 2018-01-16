@@ -16,7 +16,7 @@
 ;; 当 emacs 退出时保存文件打开状态
 (if window-system (add-hook 'kill-emacs-hook '(lambda() (desktop-save "~/.emacs.d/"))))
 
-;; 保存 session
-(add-hook 'before-save-hook 'delete-trailing-whitespace)   ;; 保存时删除行尾空白符
-(add-hook 'before-save-hook
-          (lambda () (untabify (point-min) (point-max))))  ;; 保存时将制表换成空格
+;; 保存时删除行尾空白符
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; 保存时将制表换成空格
+(add-hook 'before-save-hook (lambda () (untabify (point-min) (point-max))))
