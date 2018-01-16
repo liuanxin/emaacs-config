@@ -15,6 +15,8 @@
 (if window-system (desktop-read))
 ;; 当 emacs 退出时保存文件打开状态
 (if window-system (add-hook 'kill-emacs-hook '(lambda() (desktop-save "~/.emacs.d/"))))
+;; (require 'package)
+(add-hook 'after-init-hook 'session-initialize)
 
 ;; 保存时删除行尾空白符
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
