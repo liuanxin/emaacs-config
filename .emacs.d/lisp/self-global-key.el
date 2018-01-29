@@ -1,6 +1,8 @@
 
 ;; Ctrl + \ 拼符模式, 可以用拼音输入中文!
 
+;; C-x C-l 小写 ==> downcase-region
+;; C-x C-u 大写 ==> upcase-region
 ;; (global-set-key (kbd "C-x C-b") 'ibuffer)         ;; 替换默认的 buffer
 
 (global-set-key (kbd "C-x a") 'mark-whole-buffer)    ;; 全选 的默认键是 C-x h, 添加 C-x a 一种按键方式
