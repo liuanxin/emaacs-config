@@ -45,6 +45,8 @@
 (setq tramp-verbose 10)
 (setq tramp-debug-buffer t)
 
+(unless (display-graphic-p) (menu-bar-mode -1));; 在 termial 中不显示菜单栏
+
 (setq display-time-format "%Y/%m/%d %H:%M")    ;; 时间格式
 ;; (setq display-time-interval 1)              ;; 每 1 秒更新一次. 默认是更新分钟
 (display-time-mode 1)                          ;; 显示时间
