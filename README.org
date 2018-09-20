@@ -1,15 +1,16 @@
 
 *** emacs config
 
-custom-file
+配置分不同的文件
 1. basic
 2. org-mode
 3. global-key
 
-plugin
-: session   <desktop+>   color theme    neotree   ox-twbs   chinese-fonts-setup   pinyin-search   markdown-mode
-: <youdao-dictionary   edit-server   inf-ruby   ruby-mode   ruby-tools   django-mode>
+安装插件
+: session   color theme    neotree   ox-twbs   chinese-fonts-setup   pinyin-search   <desktop+>
+: <markdown-mode  youdao-dictionary   edit-server   inf-ruby   ruby-mode   ruby-tools   django-mode>
 
+说明
 #+BEGIN_EXAMPLE
 neotree 与自带的 speedbar 功能很类似
 
