@@ -66,12 +66,14 @@
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family "Hiragino Sans GB W3" :size 16))))
 
-(add-to-list 'after-make-frame-functions
-             (lambda (new-frame)
-               (select-frame new-frame)
-               (if window-system (self-font))))
+;; (add-to-list 'after-make-frame-functions
+;;              (lambda (new-frame)
+;;                (select-frame new-frame)
+;;                (if window-system (self-font))))
+
 ;; 只在 x 底下才设置等比字体
 (if window-system (self-font))
+
 
 ;; 窗口位置, 只在 x 底下才需要设置
 (setq window-system-default-frame-alist
