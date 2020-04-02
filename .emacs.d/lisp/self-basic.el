@@ -45,11 +45,11 @@
 (setq tramp-verbose 10)
 (setq tramp-debug-buffer t)
 
-(unless (display-graphic-p) (menu-bar-mode -1));; 在 termial 中不显示菜单栏
+(unless (display-graphic-p) (menu-bar-mode -1)) ;; 在 termial 中不显示菜单栏
 
-(setq display-time-format "%Y/%m/%d %H:%M")    ;; 时间格式
-;; (setq display-time-interval 1)              ;; 每 1 秒更新一次. 默认是更新分钟
-(display-time-mode 1)                          ;; 显示时间
+(setq display-time-format "%Y/%m/%d %H:%M")     ;; 时间格式
+;; (setq display-time-interval 1)               ;; 每 1 秒更新一次. 默认是更新分钟
+(display-time-mode 1)                           ;; 显示时间
 
 (auto-image-file-mode t)            ;; 让 Emacs 可以直接打开、显示图片
 (fset 'yes-or-no-p 'y-or-n-p)       ;; 用 y/n 代表 yes/no
